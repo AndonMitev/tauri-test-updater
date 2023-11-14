@@ -38,6 +38,7 @@ export default function Home() {
       <button onClick={() => setCounter((counter) => ++counter)}>
         Counter: {counter}
       </button>
+      <p>new version via update congratz!!!!</p>
     </main>
   );
 }
