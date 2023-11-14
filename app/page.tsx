@@ -12,9 +12,9 @@ export default function Home() {
       const { checkUpdate, installUpdate } = await import(
         '@tauri-apps/api/updater'
       );
-
+      console.log('ei 1');
       const isUpdatable = await checkUpdate();
-
+      console.log(isUpdatable);
       setIsUpdatable(isUpdatable.shouldUpdate);
       if (isUpdatable.shouldUpdate) {
         // You could show a dialog asking the user if they want to install the update here.
@@ -30,6 +30,7 @@ export default function Home() {
         await relaunch();
       }
     })();
+    console.log('ei');
   }, []);
 
   return (
@@ -38,7 +39,6 @@ export default function Home() {
       <button onClick={() => setCounter((counter) => ++counter)}>
         Counter: {counter}
       </button>
-      <p>new version via update congratz!!!!</p>
     </main>
   );
 }

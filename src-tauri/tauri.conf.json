@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "my-awesome-desktop-app",
-    "version": "0.1.4"
+    "version": "0.1.5"
   },
   "tauri": {
     "allowlist": {
@@ -57,7 +57,7 @@
         "https://github.com/AndonMitev/tauri-test-updater/releases/latest/download/latest.json"
       ],
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUyNjJEREYyNzZDRTc5QjEKUldTeGVjNTI4dDFpNHVEcFNmYWdBUy8wOEhzY1g2MUQxbVRzTDcrdCtzMFlHb0tqMU9XNDM0N1cK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEMwRTJGQ0U4RDlEMkQ1RDQKUldUVTFkTFo2UHppd0U3UERWcnJqUkdPdStjRTNPbVIzaVFrbmZkU2ZoeHI0WHA2TytJNFI4TUYK"
     },
     "windows": [
       {
