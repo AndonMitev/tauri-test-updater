@@ -38,5 +38,5 @@ jobs:
           tagName: ${{ github.ref_name }}
           releaseName: '${{ env.GITHUB_HEAD_REF }} Test Updater v__VERSION__'
           releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
+          releaseDraft: false
           prerelease: false
