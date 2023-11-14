@@ -35,8 +35,8 @@ jobs:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
-          tagName: app-v__VERSION__
-          releaseName: '${{ env.GITHUB_HEAD_REF }} App v__VERSION__'
+          tagName: ${{ github.ref_name }}
+          releaseName: '${{ env.GITHUB_HEAD_REF }} Test Updater v__VERSION__'
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
