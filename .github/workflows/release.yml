@@ -12,6 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         platform: [macos-latest]
+        include:
+          - platform: macos-latest
+            rust-targets: 'aarch64-apple-darwin, x86_64-apple-darwin'
+            tauri-args: '--target universal-apple-darwin'
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -35,8 +39,9 @@ jobs:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
+          args: ${{ matrix.tauri-args }}
           tagName: ${{ github.ref_name }}
-          releaseName: '${{ env.GITHUB_HEAD_REF }} Test Updater v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
+          releaseName: 'v__VERSION__'
+          releaseBody: 'See the assets to download and install this version.'
           releaseDraft: false
           prerelease: false
