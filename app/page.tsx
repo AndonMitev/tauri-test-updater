@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [isUpdatable, setIsUpdatable] = useState(false);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -12,9 +13,10 @@ export default function Home() {
         '@tauri-apps/api/updater'
       );
 
-      const shouldUpdate = await checkUpdate();
+      const isUpdatable = await checkUpdate();
 
-      if (shouldUpdate) {
+      setIsUpdatable(isUpdatable.shouldUpdate);
+      if (isUpdatable.shouldUpdate) {
         // You could show a dialog asking the user if they want to install the update here.
         // console.log(
         //   `Installing update ${manifest?.version}, ${manifest?.date}, ${manifest?.body}`
@@ -32,6 +34,7 @@ export default function Home() {
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+      <p className='text-white'>Is update available: {String(isUpdatable)}</p>
       <button onClick={() => setCounter((counter) => ++counter)}>
         Counter: {counter}
       </button>
