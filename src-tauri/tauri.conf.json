@@ -7,13 +7,14 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "test-updater",
-    "version": "0.1.0"
+    "productName": "my-awesome-desktop-app",
+    "version": "0.1.1"
   },
   "tauri": {
     "allowlist": {
       "all": false
     },
+
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -51,7 +52,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://github.com/AndonMitev/tauri-test-updater/releases/{{target}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUyNjJEREYyNzZDRTc5QjEKUldTeGVjNTI4dDFpNHVEcFNmYWdBUy8wOEhzY1g2MUQxbVRzTDcrdCtzMFlHb0tqMU9XNDM0N1cK"
     },
     "windows": [
       {
