@@ -1,8 +1,10 @@
 'use client';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [counter, setCounter] = useState(0);
+
   useEffect(() => {
     (async () => {
       const { relaunch } = await import('@tauri-apps/api/process');
@@ -29,6 +31,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'></main>
+    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+      <button onClick={() => setCounter((counter) => ++counter)}>
+        Counter: {counter}
+      </button>
+    </main>
   );
 }
