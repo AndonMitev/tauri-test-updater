@@ -14,6 +14,7 @@
     "allowlist": {
       "all": false
     },
+
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -51,7 +52,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://releases.myapp.com/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUyNjJEREYyNzZDRTc5QjEKUldTeGVjNTI4dDFpNHVEcFNmYWdBUy8wOEhzY1g2MUQxbVRzTDcrdCtzMFlHb0tqMU9XNDM0N1cK"
     },
     "windows": [
       {
